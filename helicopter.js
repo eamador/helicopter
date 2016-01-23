@@ -9,7 +9,7 @@ var screenHeight = window.innerHeight
 || document.documentElement.clientHeight
 || document.body.clientHeight;
 
-console.log(screenHeight);
+alert(screenHeight);
 
 function onTouchStartMove(e) {
   e.preventDefault();
@@ -45,9 +45,9 @@ function refreshforceValue() {
     setTimeout(refreshforceValue.bind(touch), 10);
   }
   //Remove the tareValue from the returned value
-  alert(screenHeight);
   var up = screenHeight / 385;
-  var height = (forceValue * screenHeight) / 385;
+  var force = ((forceValue - tareValue) * 385).toFixed(2);
+  var height = (force * screenHeight) / 385;
 
   helicopterElement.style.marginBottom = height + 'px';
 }
