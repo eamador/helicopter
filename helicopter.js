@@ -50,10 +50,8 @@ function refreshforceValue() {
 
   if (height > (screenHeight - 15)) {
     alert('Game over');
-  } else if (height <= 0) {
-    alert('Game over');
   }
-  
+
   helicopterElement.style.marginBottom = height + 'px';
 }
 
