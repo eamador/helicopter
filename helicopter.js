@@ -44,9 +44,9 @@ function refreshforceValue() {
   }
   //Remove the tareValue from the returned value
   var up = screenHeight / 385;
+  var height = (fourceValue * up) / 385;
 
-  helicopterElement.style.top = ((forceValue - tareValue) * 385).toFixed(4) * up;
-  forceTextElement.innerHTML = ((forceValue - tareValue) * 385).toFixed(2) + " grams";
+  helicopterElement.style.marginBottom = height + 'px';
 }
 
 function keypress(e) {
