@@ -44,11 +44,16 @@ function refreshforceValue() {
     forceValue = touchEvent.force || 0;
     setTimeout(refreshforceValue.bind(touch), 10);
   }
-  //Remove the tareValue from the returned value
-  var up = screenHeight / 385;
+
   var force = ((forceValue - tareValue) * 385).toFixed(2);
   var height = (force * screenHeight) / 385;
 
+  if (height > (screenHeight - 15)) {
+    alert('Game over');
+  } else if (height <= 0) {
+    alert('Game over');
+  }
+  
   helicopterElement.style.marginBottom = height + 'px';
 }
 
