@@ -59,13 +59,13 @@ Heli.User = function (params) {
   var position = null;
   var _trail   = null;
   var momentum = null;
-  
+
   function finished() {
     if (_distance > bestDistance()) {
       localStorage.bestDistance = _distance;
     }
   }
-  
+
   function bestDistance() {
     return parseInt(localStorage.bestDistance || 0, 10);
   }
@@ -137,7 +137,7 @@ Heli.Screen = function (params) {
 
   function width() { return _width; }
   function height() { return _height; }
-  
+
   function init() {
 
     magnitude = null;
@@ -202,8 +202,8 @@ Heli.Screen = function (params) {
 
     changeDir--;
 
-    toAdd = (_direction === Heli.Dir.UP) ? 
-      {top: -magnitude, bottom: magnitude} : 
+    toAdd = (_direction === Heli.Dir.UP) ?
+      {top: -magnitude, bottom: magnitude} :
       {top: magnitude, bottom: -magnitude};
 
     _terrain.push({
@@ -316,7 +316,7 @@ Heli.Audio = function(game) {
   }
 
   function progress(event, name, callback) {
-    if (event.loaded === event.total && 
+    if (event.loaded === event.total &&
         typeof callback === 'function') {
       callback();
       files[name]
@@ -405,7 +405,7 @@ var HELICOPTER = (function() {
   var pos = 0;
   var died = 0;
   var _tick = 0;
-  var ctx; 
+  var ctx;
 
   function keyDown(e) {
 
@@ -413,7 +413,7 @@ var HELICOPTER = (function() {
       audio.play('start');
       thrustersOn = true;
     }
-    
+
     if (e.keyCode === KEY.S) {
       localStorage.soundDisabled = !soundDisabled();
     } else if (state === Heli.State.WAITING && e.keyCode === KEY.ENTER) {
@@ -572,8 +572,8 @@ var HELICOPTER = (function() {
     }
 
     var audio_files = [
-      ['start', root + 'motor.ogg'],
-      ['crash', root + 'crash.ogg']
+      ['start', root + 'assets/sound/motor.ogg'],
+      ['crash', root + 'assets/sound/crash.ogg']
     ];
 
     load(audio_files, function () { loaded(); });
