@@ -572,8 +572,8 @@ var HELICOPTER = (function() {
     }
 
     var audio_files = [
-      ['start', root + 'assets/sound/motor.ogg'],
-      ['crash', root + 'assets/sound/crash.ogg']
+      ['start', root + 'http://sevilla.rocks/ios/helicopter/game/assets/sound/motor.ogg'],
+      ['crash', root + 'http://sevilla.rocks/ios/helicopter/game/assets/sound/crash.ogg']
     ];
 
     load(audio_files, function () { loaded(); });
