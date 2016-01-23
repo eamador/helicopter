@@ -44,7 +44,7 @@ function refreshforceValue() {
   }
   //Remove the tareValue from the returned value
   var up = screenHeight / 385;
-  var height = (fourceValue * up) / 385;
+  var height = ((forceValue * 385).toFixed(2) * up) / 385;
 
   helicopterElement.style.marginBottom = height + 'px';
 }
